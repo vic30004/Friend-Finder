@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <script src="https://kit.fontawesome.com/b4775cc3ca.js" crossorigin="anonymous"></script>
+
+    <style>
+        @import url("https://fonts.googleapis.com/css?family=Indie+Flower|M+PLUS+1p&display=swap");
+
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        :root {
+            --main-color: rgb(15, 15, 17);
+            --secondary-color: #950740;
+            --third-color: #4e4e50;
+            --fourth-color: #dad8d8;
+            --light-color: ivory;
+            --dark-color: black;
+            --max-width: 1820px;
+            --h-font: "Indie Flower", cursive;
+            --text-font: "M PLUS 1p", sans-serif;
+        }
+
+        body{
+            font-style: var(--text-font);
+        }
+
+        a {
+            text-decoration: none;
+            color: ivory;
+            font-size: 1.5rem;
+        }
+
+        i {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+
+        h1,
+        h2,
+        h3 {
+            font-style: var(--h-font);
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+        }
+
+        p {
+            padding: 0;
+            font-size: 1.5rem;
+            font-style: var(--text-font);
+            line-height: 1.5;
+        }
+
+        /* Utility */
+
+        .btn {
+            padding: 1rem;
+            color: var(--light-color);
+            background: linear-gradient(45deg,
+                    var(--secondary-color),
+                    var(--main-color),
+                    var(--dark-color));
+            outline: none;
+            border: none;
+            box-shadow: 0 0 54px var(--main-color), 0 0 54px var(--main-color);
+            transform: scale(1);
+            border-radius: 20px;
+            transition: all 0.5s ease;
+            display: inline-block;
+        }
+
+        .btn:hover {
+            background: linear-gradient(45deg,
+                    var(--dark-color),
+                    var(--main-color),
+                    var(--secondary-color));
+            transform: scale(0.9);
+            box-shadow: 0 0 30px var(--main-color), 0 0 30px var(--main-color);
+        }
+
+        .btn:active {
+            transform: scale(0.8);
+        }
+
+        .py-1 {
+            padding: 1rem;
+        }
+
+        .py-2 {
+            padding: 2rem;
+        }
+
+        .py-3 {
+            padding: 3rem;
+        }
+
+
+        .bg-dark {
+            background: var(--main-color);
+        }
+
+        .bg-light {
+            background: var(--light-color);
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .container {
+            display: flex;
+            justify-content: center;
+            align-content: center;
+            text-align: center;
+            max-width: var(--max-width);
+        }
+
+        .card {
+            padding: 2rem 2rem;
+            width: 30%;
+            background: var(--secondary-color);
+            color: var(--fourth-color);
+            margin: 1rem;
+            border-radius: 20px;
+        }
+
+        .card:hover {
+            color: var(--main-color) !important;
+        }
+
+
+        /* header */
+
+        #hero-head {
+            display: flex;
+            justify-content: center;
+            flex-flow: column nowrap;
+            height: 100vh;
+            align-items: center;
+            background: url("https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center/cover;
+            position: relative;
+            z-index: 1;
+        }
+
+        #hero-head:before {
+            width: 100%;
+            height: 100%;
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: -1;
+            margin: 0 auto;
+        }
+
+        #hero-head h1 {
+            color: var(--light-color);
+            font-size: 3rem;
+        }
+
+        #hero-head p {
+            color: var(--light-color);
+            padding-bottom: 1.5rem;
+        }
+
+        .head {
+            transform: translateY(0);
+            transition: all 1s ease-in;
+            animation: slide .5s ease-in 1;
+        }
+
+        @keyframes slide {
+            0% {
+                transform: translateY(-400%);
+            }
+
+            100% {
+                transform: translateY(0%);
+            }
+        }
+
+        /* Section 1 */
+        #first {
+            background: var(--main-color);
+        }
+
+        #first h2 {
+            font-size: 2rem;
+            color: var(--light-color);
+        }
+
+        #first .container .class i,
+        #first .container .class h3,
+        #first .container .class p {
+            line-height: 1.5;
+            margin-bottom: 1rem;
+        }
+    </style>
+    <title>Friend Finder | Home</title>
+</head>
+
+<body>
+    <!-- Header -->
+    <header id="hero-head">
+        <div class="head text-center py-1">
+            <h1>Friend Finder</h1>
+            <p>Rated #1 Friend Finder App</p>
+            <div class="">
+                <a class="btn" href="./surver.html">Find a Friend!</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Section 1 -->
+
+    <section id="first" class="py-2">
+        <h2 class="text-center py-1">About Us</h2>
+        <div class="container">
+            <div class="card">
+                <i class="far fa-list-alt text-center"></i>
+                <h3>Survey</h3>
+                <p>
+                    Our Survey was created by professional psychologist and sociologist.
+                </p>
+            </div>
+            <div class="card">
+                <i class="fas fa-user-shield"></i>
+                <h3>Data Security</h3>
+                <p>
+                    In an age where data is very important, we make sure all your data
+                    is safe. You can request for your data to be deleted at anytime!
+                </p>
+            </div>
+            <div class="card">
+                <i class="far fa-smile"></i>
+                <h3>Guaranteed to Work</h3>
+                <p>
+                    With our propritery algorthim and survey, we guarantee that you will a new best frind!
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonial -->
+
+    <section id="testimonial" class="bg-light py-2 text-center">
+        <h2>Testimonial</h2>
+        <div class="container">
+            <div class="review-card">
+                <div class="user-pic">
+                    <img src="" alt="">
+                    <h3></h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
+                    id perspiciatis quis? Accusamus, atque?</p>
+
+            </div>
+            <div class="review-card">
+                <div class="user-pic">
+                    <img src="" alt="">
+                    <h3></h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
+                    id perspiciatis quis? Accusamus, atque?</p>
+
+            </div>
+            <div class="review-card">
+                <div class="user-pic">
+                    <img src="" alt="">
+                    <h3></h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
+                    id perspiciatis quis? Accusamus, atque?</p>
+
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>
