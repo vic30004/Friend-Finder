@@ -60,6 +60,12 @@
             line-height: 1.5;
         }
 
+        img{
+            width:100%;
+            height:100%;
+            display: block;
+        }
+
         /* Utility */
 
         .btn {
@@ -137,6 +143,40 @@
             color: var(--main-color) !important;
         }
 
+        .main-content{
+            display:grid;
+            grid-template-columns: repeat(1,1fr);
+            padding: 1rem;
+            width:80%;
+            margin:auto;
+        }
+
+        .review-card{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            width:100%;
+            margin:auto;
+            background: var(--main-color);
+            color:var(--light-color);
+            border-radius: 20px;
+            transition: background 2s ease-in-out;
+        }
+        .user-pic{
+            margin-right: 1rem;
+            background: var(--secondary-color);
+            height:100%;
+            width:30%;
+            display:flex;
+            flex-flow: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 20px;
+            border-right: none;
+            outline: none;
+            transition: background 1s ease-in-out;
+        }
 
         /* header */
 
@@ -205,6 +245,33 @@
             line-height: 1.5;
             margin-bottom: 1rem;
         }
+
+        /* Testimonial */
+
+        #testimonial h2{
+            font-size: 2rem;
+        }
+
+        #testimonial .main-content .review-card .user-pic img{
+            border-radius: 50%;
+            width:200px;
+            height:200px;
+            margin-top: 1rem;
+        }
+
+        #testimonial .main-content:hover .review-card{
+            background:var(--secondary-color);
+        }
+        #testimonial .main-content:hover .user-pic{
+            background: var(--main-color);
+        }
+
+        /* footer */
+        #foot{
+            color:var(--light-color);
+            padding:.5rem;
+        }
+
     </style>
     <title>Friend Finder | Home</title>
 </head>
@@ -245,7 +312,7 @@
                 <i class="far fa-smile"></i>
                 <h3>Guaranteed to Work</h3>
                 <p>
-                    With our propritery algorthim and survey, we guarantee that you will a new best frind!
+                    With our proprietary algorthim and survey, we guarantee that you will a new best frind!
                 </p>
             </div>
         </div>
@@ -255,37 +322,42 @@
 
     <section id="testimonial" class="bg-light py-2 text-center">
         <h2>Testimonial</h2>
-        <div class="container">
+        <div class="main-content">
             <div class="review-card">
                 <div class="user-pic">
-                    <img src="" alt="">
-                    <h3></h3>
+                    <img src="https://thewire-cableonebiz.com/wp-content/uploads/2017/08/customers-happy-1.jpg" alt="">
+                    <h3>Lauren & Samantha</h3>
                 </div>
                 <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
                     id perspiciatis quis? Accusamus, atque?</p>
-
-            </div>
-            <div class="review-card">
-                <div class="user-pic">
-                    <img src="" alt="">
-                    <h3></h3>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
-                    id perspiciatis quis? Accusamus, atque?</p>
-
-            </div>
-            <div class="review-card">
-                <div class="user-pic">
-                    <img src="" alt="">
-                    <h3></h3>
-                </div>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
-                    id perspiciatis quis? Accusamus, atque?</p>
-
             </div>
         </div>
+        <div class="main-content">
+            <div class="review-card">
+                <div class="user-pic">
+                    <img src="http://www.morehighfive.com/gallery/hf3.jpg" alt="">
+                    <h3>Jill & Bill</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
+                    id perspiciatis quis? Accusamus, atque?</p>
+            </div>
+        </div>
+        <div class="main-content">
+            <div class="review-card">
+                <div class="user-pic">
+                    <img src="https://ionemadamenoire.files.wordpress.com/2018/02/video-games.jpg?w=1068&h=600" alt="">
+                    <h3>James & Sam</h3>
+                </div>
+                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Rem alias corrupti aliquam rerum beatae vel
+                    id perspiciatis quis? Accusamus, atque?</p>
+            </div>
+        </div>
+        </div>
     </section>
-
+     <!-- Footer --> 
+ <footer id="foot" class="bg-dark text-center">
+            <p>copyright&copy;</p>
+        </footer>
 
 </body>
 
