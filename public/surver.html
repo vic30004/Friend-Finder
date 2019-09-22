@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<style>
+    @import url("https://fonts.googleapis.com/css?family=Indie+Flower|M+PLUS+1p&display=swap");
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    :root {
+        --main-color: rgb(15, 15, 17);
+        --secondary-color: #950740;
+        --third-color: #4e4e50;
+        --fourth-color: #dad8d8;
+        --light-color: ivory;
+        --dark-color: black;
+        --max-width: 1820px;
+        --h-font: "Indie Flower", cursive;
+        --text-font: "M PLUS 1p", sans-serif;
+    }
+
+    body {
+        font-style: var(--text-font);
+    }
+
+    a {
+        text-decoration: none;
+        color: ivory;
+        font-size: 1.5rem;
+    }
+
+    i {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    h1,
+    h2,
+    h3 {
+        font-style: var(--h-font);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        padding: 0;
+        font-size: 1.5rem;
+        font-style: var(--text-font);
+        line-height: 1.5;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    /* Utility */
+
+    .btn {
+        padding: 1rem;
+        color: var(--light-color);
+        background: linear-gradient(45deg,
+                var(--secondary-color),
+                var(--main-color),
+                var(--dark-color));
+        outline: none;
+        border: none;
+        box-shadow: 0 0 54px var(--main-color), 0 0 54px var(--main-color);
+        transform: scale(1);
+        border-radius: 20px;
+        transition: all 0.5s ease;
+        display: inline-block;
+    }
+
+    .btn:hover {
+        background: linear-gradient(45deg,
+                var(--dark-color),
+                var(--main-color),
+                var(--secondary-color));
+        transform: scale(0.9);
+        box-shadow: 0 0 30px var(--main-color), 0 0 30px var(--main-color);
+    }
+
+    .btn:active {
+        transform: scale(0.8);
+    }
+
+    .py-1 {
+        padding: 1rem;
+    }
+
+    .py-2 {
+        padding: 2rem;
+    }
+
+    .py-3 {
+        padding: 3rem;
+    }
+
+
+    .bg-dark {
+        background: var(--main-color);
+    }
+
+    .bg-light {
+        background: var(--light-color);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        max-width: var(--max-width);
+    }
+
+    .card {
+        padding: 2rem;
+        width: 30%;
+        background: var(--secondary-color);
+        color: var(--fourth-color);
+        margin: 1rem;
+        border-radius: 20px;
+    }
+
+    .card:hover {
+        color: var(--main-color) !important;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1rem;
+        width: 80%;
+        margin: auto;
+    }
+
+    .review-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        background: var(--main-color);
+        color: var(--light-color);
+        border-radius: 20px;
+        transition: background 2s ease-in-out;
+    }
+
+    .user-pic {
+        margin-right: 1rem;
+        background: var(--secondary-color);
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border-right: none;
+        outline: none;
+        transition: background 1s ease-in-out;
+    }
+
+    .wrapper{
+        background:var(--main-color);
+        color:var(--light-color);
+    }
+
+    /* header */
+
+    #hero-head {
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        height: 100vh;
+        align-items: center;
+        background: url("https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center/cover;
+        position: relative;
+        z-index: 1;
+    }
+
+    #hero-head:before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        margin: 0 auto;
+    }
+
+    #hero-head h1 {
+        color: var(--light-color);
+        font-size: 3rem;
+    }
+
+    #hero-head p {
+        color: var(--light-color);
+        padding-bottom: 1.5rem;
+    }
+
+    .head {
+        transform: translateY(0);
+        transition: all 1s ease-in;
+        animation: slide .5s ease-in 1;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateY(-400%);
+        }
+
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    /* Section 1 */
+    #first {
+        background: var(--main-color);
+    }
+
+    #first h2 {
+        font-size: 2rem;
+        color: var(--light-color);
+    }
+
+    #first .container .class i,
+    #first .container .class h3,
+    #first .container .class p {
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    /* Testimonial */
+
+    #testimonial h2 {
+        font-size: 2rem;
+    }
+
+    #testimonial .main-content .review-card .user-pic img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-top: 1rem;
+    }
+
+    #testimonial .main-content:hover .review-card {
+        background: var(--secondary-color);
+    }
+
+    #testimonial .main-content:hover .user-pic {
+        background: var(--main-color);
+    }
+
+    /* footer */
+    #foot {
+        color: var(--light-color);
+        padding: .5rem;
+    }
+
+/* Survey */
+
+
+
+#survery{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    width:100%;
+    height:100%;
+}
+#survery .first-part{
+    width:80%;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    height: 100%;
+    margin:0 1rem;
+    padding:2rem;
+}
+#survery .first-part p{
+    margin: .75rem 0;
+}
+
+#survery .first-part input{
+    border-radius: 5px;
+    outline: none;
+    width:80%;
+    height:30px;
+    margin: .75rem 0;
+}
+
+
+#questions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width:100%;
+}
+
+#questions .card{
+    width:80%;
+}
+
+</style>
+
+<body>
+    <div class="wrapper">
+    <section id="survery" class="py-1">
+        <h1 class="text-center">Survey Questions</h1>
+        <div class="first-part">
+            <h2 >About You</h2>
+            <p>Name (required)</p>
+            <input type="text" placeholder="John Doe" id="name">
+            <p>Link to Photo Image (Required)</p>
+            <input type="text" name="picture" id="pic">
+        </div>
+    </section>
+
+    <section id="questions">
+        <div class="card">
+            <h3>
+                Question 1
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet.
+            </p>
+            <select name="" id="">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</value>
+                <option value="2">2</value>
+                <option value="3">3</value>
+                <option value="4">4</value>
+                <option value="5">5 (Strongly Agree)</value>
+            </select>
+
+        </div>
+        <div class="card">
+            <h3>
+                Question
+            </h3>
+            <p>
+                Lorem ipsum dolor sit amet.
+            </p>
+            <select name="" id="">
+                <option value=""></option>
+                <option value="1">1 (Strongly Disagree)</value>
+                <option value="2">2</value>
+                <option value="3">3</value>
+                <option value="4">4</value>
+                <option value="5">5 (Strongly Agree)</value>
+            </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 3
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 4
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 5
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 6
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 7
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 8
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 9
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+
+            </div>
+            <div class="card">
+                <h3>
+                    Question 10
+                </h3>
+                <p>
+                    Lorem ipsum dolor sit amet.
+                </p>
+                <select name="" id="">
+                    <option value=""></option>
+                    <option value="1">1 (Strongly Disagree)</value>
+                    <option value="2">2</value>
+                    <option value="3">3</value>
+                    <option value="4">4</value>
+                    <option value="5">5 (Strongly Agree)</value>
+                </select>
+            </div>
+            <button class="btn" type="submit"> Submit </button>
+
+    </section>
+</div>
+</body>
+
+</html>
