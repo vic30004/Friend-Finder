@@ -1,0 +1,384 @@
+
+    @import url("https://fonts.googleapis.com/css?family=Indie+Flower|M+PLUS+1p&display=swap");
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+
+    :root {
+        --main-color: rgb(15, 15, 17);
+        --secondary-color: #950740;
+        --third-color: #4e4e50;
+        --fourth-color: #dad8d8;
+        --light-color: ivory;
+        --dark-color: black;
+        --max-width: 1820px;
+        --h-font: "Indie Flower", cursive;
+        --text-font: "M PLUS 1p", sans-serif;
+    }
+
+    body {
+        font-style: var(--text-font);
+    }
+
+    a {
+        text-decoration: none;
+        color: ivory;
+        font-size: 1.5rem;
+    }
+
+    i {
+        text-align: center;
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+
+    h1,
+    h2,
+    h3 {
+        font-style: var(--h-font);
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+    }
+
+    p {
+        padding: 0;
+        font-size: 1.5rem;
+        font-style: var(--text-font);
+        line-height: 1.5;
+    }
+
+    img {
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+
+    /* Utility */
+
+    .btn {
+        padding: 1rem;
+        color: var(--light-color);
+        background: linear-gradient(45deg,
+                var(--secondary-color),
+                var(--main-color),
+                var(--dark-color));
+        outline: none;
+        border: none;
+        box-shadow: 0 0 54px var(--main-color), 0 0 54px var(--main-color);
+        transform: scale(1);
+        border-radius: 20px;
+        transition: all 0.5s ease;
+        display: inline-block;
+    }
+
+    .btn:hover {
+        background: linear-gradient(45deg,
+                var(--dark-color),
+                var(--main-color),
+                var(--secondary-color));
+        transform: scale(0.9);
+        box-shadow: 0 0 30px var(--main-color), 0 0 30px var(--main-color);
+    }
+
+    .btn:active {
+        transform: scale(0.8);
+    }
+
+    .py-1 {
+        padding: 1rem;
+    }
+
+    .py-2 {
+        padding: 2rem;
+    }
+
+    .py-3 {
+        padding: 3rem;
+    }
+
+
+    .bg-dark {
+        background: var(--main-color);
+    }
+
+    .bg-light {
+        background: var(--light-color);
+    }
+
+    .text-center {
+        text-align: center;
+    }
+
+    .container {
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        text-align: center;
+        max-width: var(--max-width);
+    }
+
+    .card {
+        padding: 2rem;
+        width: 30%;
+        background: var(--secondary-color);
+        color: var(--fourth-color);
+        margin: 1rem;
+        border-radius: 20px;
+    }
+
+    .card:hover {
+        color: var(--main-color) !important;
+    }
+
+    .main-content {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        padding: 1rem;
+        width: 80%;
+        margin: auto;
+    }
+
+    .review-card {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        width: 100%;
+        margin: auto;
+        background: var(--main-color);
+        color: var(--light-color);
+        border-radius: 20px;
+        transition: background 2s ease-in-out;
+    }
+
+    .user-pic {
+        margin-right: 1rem;
+        background: var(--secondary-color);
+        height: 100%;
+        width: 30%;
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        border-right: none;
+        outline: none;
+        transition: background 1s ease-in-out;
+    }
+
+    .wrapper{
+        background:var(--main-color);
+        color:var(--light-color);
+    }
+
+    #modal{
+        display: none ;
+        position: fixed;
+        z-index:2;
+        left:0;
+        top:0;
+        width:100%;
+        overflow: auto;
+        height:100%;
+        background: rgba(0, 0, 0, 0.5);
+    }
+    #modal .modal-content{
+        background-color: var(--fourth-color);
+        padding: 20px;
+        height:50%;
+        margin: 20% auto;
+        width:70%;
+        box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 7px 20px 0 rgba(0, 0, 0, 0.17);
+        color: var(--main-color);
+        border-radius:20px;
+    }
+    #modal .modal-content img{
+       width:50%;
+       margin:0 auto;
+       height: 80%;
+
+    }
+    
+    .closeBtn{
+        color:var(--light-color);
+        float: right;
+        font-size: 2rem;
+    }
+    .closeBtn:hover{
+        cursor: pointer;
+    }
+
+    #modal .modal-content .close-btn{
+        justify-content: flex-end;
+        font-size: 1rem;
+   }
+    /* header */
+
+    #hero-head {
+        display: flex;
+        justify-content: center;
+        flex-flow: column nowrap;
+        height: 100vh;
+        align-items: center;
+        background: url("https://images.unsplash.com/photo-1530541930197-ff16ac917b0e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1350&q=80") no-repeat center center/cover;
+        position: relative;
+        z-index: 1;
+    }
+
+    #hero-head:before {
+        width: 100%;
+        height: 100%;
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        background: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+        margin: 0 auto;
+    }
+
+    #hero-head h1 {
+        color: var(--light-color);
+        font-size: 3rem;
+    }
+
+    #hero-head p {
+        color: var(--light-color);
+        padding-bottom: 1.5rem;
+    }
+
+    .head {
+        transform: translateY(0);
+        transition: all 1s ease-in;
+        animation: slide .5s ease-in 1;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateY(-400%);
+        }
+
+        100% {
+            transform: translateY(0%);
+        }
+    }
+
+    /* Section 1 */
+    #first {
+        background: var(--main-color);
+    }
+
+    #first h2 {
+        font-size: 2rem;
+        color: var(--light-color);
+    }
+
+    #first .container .class i,
+    #first .container .class h3,
+    #first .container .class p {
+        line-height: 1.5;
+        margin-bottom: 1rem;
+    }
+
+    /* Testimonial */
+
+    #testimonial{
+        background: var(--main-color);
+        border-top: 1rem solid var(--third-color);
+    }
+
+    #testimonial h2 {
+        font-size: 2rem;
+        color:var(--light-color);
+    }
+
+    #testimonial .main-content .review-card .user-pic img {
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        margin-top: 1rem;
+    }
+
+    #testimonial .main-content:hover .review-card {
+        background: var(--secondary-color);
+    }
+
+    #testimonial .main-content:hover .user-pic {
+        background: var(--main-color);
+    }
+
+    /* footer */
+    #foot {
+        color: var(--light-color);
+        padding: .5rem;
+        border-top: 3px solid var(--secondary-color);
+    }
+
+/* Survey */
+
+
+
+#survey{
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+    align-content: center;
+    width:100%;
+    height:100%;
+    padding: 1rem 0;
+}
+
+#survey h1{
+    font-size:3rem;
+}
+
+#survey .first-part{
+    width:80%;
+    background: var(--secondary-color);
+    border-radius: 20px;
+    height: 100%;
+    margin:0 1rem;
+    padding:2rem;
+}
+#survey .first-part p{
+    margin: .75rem 0;
+}
+
+#survey .first-part input{
+    border-radius: 5px;
+    outline: none;
+    width:80%;
+    height:30px;
+    margin: .75rem 0;
+}
+
+
+#questions{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
+    width:100%;
+}
+
+#questions .card{
+    width:80%;
+}
+
+
+#questions a{
+    margin: 1rem 0;
+    width:50%;
+    font-size:1.5rem;
+}
+
+.home-page{
+    position:sticky;
+    top: 0;
+    left: 0;
+}
+
