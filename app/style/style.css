@@ -329,22 +329,25 @@
     align-content: center;
     width:100%;
     height:100%;
-    padding: 1rem 0;
 }
 
 #survey h1{
     font-size:3rem;
 }
 
-#survey .first-part{
-    width:80%;
+#survey .card{
+    width:100%;
     background: var(--secondary-color);
     border-radius: 20px;
     height: 100%;
-    margin:0 1rem;
     padding:2rem;
+    margin: 0 auto;
 }
-#survey .first-part p{
+
+
+
+
+#survey .first-part label{
     margin: .75rem 0;
 }
 
@@ -365,14 +368,48 @@
     width:100%;
 }
 
-#questions .card{
-    width:80%;
+#survey form{
+    width: 80%;
 }
+#survey form input{
+    width: 100%;
+    border-radius: 5px;
+    outline: none; 
+    height:1.2rem;
+}
+
+
+#survey form h3{
+    margin: .75rem 0;
+}
+
+
+#questions .card{
+    width:100%;
+    margin: 1rem auto;
+}
+
+#questions .card:nth-child(odd){
+    transform: translateX(0%);
+    opacity: 1;
+    animation: odd 1s ease 1;
+}
+
+#questions .card:nth-child(even){
+    transform: translateX(0%);
+    opacity: 1;
+    animation: even 1s ease 1;
+
+}
+
+#questions .card select{
+    border-radius: 5px;
+}
+
 
 
 #questions a{
     margin: 1rem 0;
-    width:50%;
     font-size:1.5rem;
 }
 
@@ -382,3 +419,32 @@
     left: 0;
 }
 
+
+
+@keyframes odd{
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    
+}
+
+@keyframes even{
+    0%{
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    100%{
+        transform: translateX(0%);
+        opacity: 1;
+    }
+
+    
+}

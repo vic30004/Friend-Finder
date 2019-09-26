@@ -21,15 +21,15 @@
         </div>
 
         <section id="survey">
-            <form action="/api/friends" method="POST" role="form">
+            <form>
                 <h1 class="text-center">Survey Questions</h1>
-                <div class="first-part">
+                <div class="card">
                     <h2>About You</h2>
                     <hr>
-                    <label for="name">Name</label>
+                    <label for="name"> <h3>Name</h3> </label>
           <input type="text" name="name" id="name" class="form" attribute="required" placeholder="Enter Name" />
 
-                    <label for="pic">Picture (Requiried)</label>
+                    <label for="pic"><h3>Picture (Requiried)</h3></label>
                     <input type="text" name="photo" id="pic">
                 </div>
             
@@ -61,7 +61,7 @@
                         <p>
                             Lorem ipsum dolor sit amet.
                         </p>
-                        <select name="question" id="q1">
+                        <select name="question" id="q2">
                             <option value=""></option>
                             <option value="1">1 (Strongly Disagree)</value>
                             <option value="2">2</value>
@@ -208,7 +208,7 @@
                     
                 </div>
                 <button type="submit" class="btn">Submit</button>
-                <a href="/api/friends" class="btn">Submit</a>
+                <a href="/api/friends" class="">Friends Api</a>
         </form>
         </section>
     </div>
