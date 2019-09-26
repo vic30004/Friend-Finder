@@ -2,7 +2,6 @@ const express = require('express');
 const path = require('path')
 const nodemon=require('nodemon');
 const app= express();
-const PORT = 8080;
 
 
 app.use(express.urlencoded({ extended: true }));
@@ -15,6 +14,4 @@ require("./routing/htmlRoutes.js")(app);
 require("./routing/apiRoutes.js")(app);
 
 
-app.listen(PORT,function(){
-    console.log(`Listening on PORT ${PORT}`)
-})
+app.listen(process.env.PORT || 5000);
